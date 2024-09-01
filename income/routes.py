@@ -1,6 +1,6 @@
 from typing import Union
 from fastapi import APIRouter
-from income.models import Income
+from income.schemas import Income
 
 router = APIRouter(
     tags=["Income"]
@@ -9,4 +9,4 @@ router = APIRouter(
 
 @router.post("/income/new")
 def create_new_income(income: Income):
-    return income
+    return {"message": "Income created successfully"}
